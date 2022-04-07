@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Scanner;
+
 public class App {
 
     static String merchantName;
@@ -15,17 +17,24 @@ public class App {
     static String infoProduct;
 
     public static void main(String[] args) {
-        initVars();
+        doInputs();
         showData(processData());
     }
 
-    private static void initVars() {
-        merchantName = "Роберт";
-        email = "bob@mail.com";
-        phone = "055 123-4567";
-        productName = "апельсины";
-        quantity = 1000;
-        price = 19.99;
+    static private void doInputs() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Имя: ");
+        merchantName = scanner.nextLine();
+        System.out.println("Електронная почта: ");
+        email = scanner.nextLine();
+        System.out.println("Номер телефона: ");
+        phone = scanner.nextLine();
+        System.out.println("Наименование товара: ");
+        productName = scanner.nextLine();
+        System.out.println("Количество товара: ");
+        quantity = scanner.nextInt();
+        System.out.println("Цена: ");
+        price = scanner.nextDouble();
     }
 
     private static String processData() {
